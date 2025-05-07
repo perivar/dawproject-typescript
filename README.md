@@ -1,177 +1,252 @@
-# Example TypeScript Package ready to be published on npm for 2021
+# 🎵 DAWProject-Typescript
 
-This is an example TypeScript Package ready to be published on npm. It has been set up with automated tests and package publishing workflow using GitHub Actions CI/CD. It is made primarily for GitHub + VS Code (Windows / Mac / Linux) users who are about to write and publish their first TypeScript npm package. This package could serve as a starter / boilerplate / demo for them.
+*TypeScript/JavaScript code for working with DAWProject files — enabling DAW interoperability.*
 
-[![npm package](https://img.shields.io/badge/npm%20i-example--typescript--package-brightgreen)](https://www.npmjs.com/package/example-typescript-package) [![version number](https://img.shields.io/npm/v/example-typescript-package?color=green&label=version)](https://github.com/tomchen/example-typescript-package/releases) [![Actions Status](https://github.com/tomchen/example-typescript-package/workflows/Test/badge.svg)](https://github.com/tomchen/example-typescript-package/actions) [![License](https://img.shields.io/github/license/tomchen/example-typescript-package)](https://github.com/tomchen/example-typescript-package/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/perivar/dawproject-typescript)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/perivar/dawproject-typescript.svg)](https://github.com/perivar/dawproject-typescript/stargazers)
 
-It uses npm, TypeScript compiler, Jest, webpack, ESLint, Prettier, husky, pinst, commitlint. The production files include CommonJS, ES Modules, UMD version and TypeScript declaration files.
+## 📖 About
 
-<p align="center">
-<a href="https://github.com/" title="Github"><img src="https://github.com/get-icon/geticon/raw/master/icons/github-icon.svg" alt="Github" width="21px" height="21px"></a> <a href="https://code.visualstudio.com/" title="Visual Studio Code"><img src="https://github.com/get-icon/geticon/raw/master/icons/visual-studio-code.svg" alt="Visual Studio Code" width="21px" height="21px"></a> <a href="https://www.microsoft.com/windows" title="Windows"><img src="https://github.com/get-icon/geticon/raw/master/icons/microsoft-windows.svg" alt="Windows" width="21px" height="21px"></a> <a href="https://www.apple.com/macos/" title="Mac OS"><img src="https://github.com/get-icon/geticon/raw/master/icons/macOS.svg" alt="Mac OS" width="21px" height="21px"></a> <a href="https://www.linuxfoundation.org/" title="Linux"><img src="https://github.com/get-icon/geticon/raw/master/icons/linux-tux.svg" alt="Linux" width="21px" height="21px"></a> <a href="https://www.npmjs.com/" title="npm"><img src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg" alt="npm" width="21px" height="21px"></a> <a href="https://www.typescriptlang.org/" title="Typescript"><img src="https://github.com/get-icon/geticon/raw/master/icons/typescript-icon.svg" alt="Typescript" width="21px" height="21px"></a> <a href="https://jestjs.io/" title="Jest"><img src="https://github.com/get-icon/geticon/raw/master/icons/jest.svg" alt="Jest" width="21px" height="21px"></a> <a href="https://webpack.js.org/" title="webpack"><img src="https://github.com/get-icon/geticon/raw/master/icons/webpack.svg" alt="webpack" width="21px" height="21px"></a> <a href="https://eslint.org/" title="ESLint"><img src="https://github.com/get-icon/geticon/raw/master/icons/eslint.svg" alt="ESLint" width="21px" height="21px"></a> <a href="https://prettier.io/" title="Prettier"><img src="https://github.com/get-icon/geticon/raw/master/icons/prettier.svg" alt="Prettier" width="21px" height="21px"></a> <a href="https://yarnpkg.com/" title="yarn"><img src="https://github.com/get-icon/geticon/raw/master/icons/yarn.svg" alt="yarn" width="21px" height="21px"></a>
-</p>
+DAWProject is an **open XML-based file format** designed for **seamless project exchange between DAWs**. It allows music producers, engineers, and developers to share **full session data** between different DAWs without losing important information.
 
-## Development
+The original **DAWProject** repository, developed by **Bitwig**, was written in **Java** (https://github.com/bitwig/dawproject). This repository provides a **TypeScript/JavaScript** implementation, enabling integration with web applications, Node.js environments, and other JavaScript-based projects. It is inspired by the original Java version and the Python port ([DAWProject-Py](https://github.com/roex-audio/dawproject-py)).
 
-### Use as a template
+We **love the idea of DAWProject** and want to see it in **every DAW**. The more people building on it, the better—so we're making our **TypeScript version publicly available**. If anyone wants to **turn it into an npm package**, extend it, or modify it further, feel free!
 
-[![Use the template](https://img.shields.io/static/v1?label=&message=Click%20here%20to%20use%20this%20package%20as%20a%20template%20to%20start%20a%20new%20repo%20on%20GitHub&color=brightgreen&style=for-the-badge)](https://github.com/tomchen/example-typescript-package/generate)
+## 📦 Installation
 
-(Click the above button to use this example package as a template for your new GitHub repo, this will initialize a new repository and my commits will not be in your git history)
+Since this is currently a **source-only library**, you can clone the repository and use it directly in your TypeScript/JavaScript project:
 
-(If you do not use GitHub, you can [download the archive of the example package](https://github.com/tomchen/example-typescript-package/archive/main.zip))
-
-### Set up tools and environment
-
-You need to have [Node.js](https://nodejs.org/en/download/) installed. Node includes npm as its default package manager.
-
-Open the whole package folder with a good code editor, preferably [Visual Studio Code](https://code.visualstudio.com/download). Consider installing VS Code extensions [ES Lint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
-
-In the VS Code top menu: **Terminal** -> **New Terminal**
-
-### Install dependencies
-
-Install dependencies with npm:
-
-```bash
-npm i
+```sh
+git clone https://github.com/perivar/dawproject-typescript.git
+cd dawproject-ts
 ```
 
-### Write your code
+Install dependencies using npm or yarn:
 
-Make necessary changes in **package.json** (name, version, description, keywords, author, homepage and other URLs).
-
-Write your code in **src** folder, and unit test in **test** folder, replacing the original files there.
-
-The VS Code shortcuts for formatting of a code file are: <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> (Windows); <kbd>Shift</kbd> + <kbd>Option (Alt)</kbd> + <kbd>F</kbd> (MacOS); <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> (Linux).
-
-Change code linting and formatting settings in **.prettierrc.js** if you want.
-
-### Test
-
-Test your code with Jest framework:
-
-```bash
-npm run test
+```sh
+npm install
+# or
+yarn install
 ```
 
-**Note:** Example TypeScript Package uses [husky](https://typicode.github.io/husky/), [pinst](https://github.com/typicode/pinst) and [commitlint](https://commitlint.js.org/) to automatically execute test and [lint commit message](https://www.conventionalcommits.org/) before every commit.
+Then, import it into your TypeScript/JavaScript project:
 
-### Build
+```typescript
+import { DawProject, Project, Application, Track, Channel, RealParameter, Unit, ContentType, MixerRole, Utility } from './src/dawproject';
+```
+*(Note: Update the import path based on your project structure)*
 
-Build production (distribution) files in your **dist** folder:
+## 🚀 Quick Start
 
-```bash
-npm run build
+### **Loading a DAWProject file (.dawproject container)**
+
+```typescript
+import { DawProject, Project } from './src/dawproject';
+import * as fs from 'fs/promises'; // Requires Node.js fs module
+
+async function loadExampleProject(filePath: string) {
+  try {
+    const fileData = await fs.readFile(filePath);
+    const project: Project = await DawProject.loadProject(fileData);
+
+    // Print project metadata
+    console.log(`Project Version: ${project.version}`);
+    console.log(`Application: ${project.application.name} v${project.application.version}`);
+    console.log(`Tracks: ${project.structure.length}`);
+
+  } catch (error) {
+    console.error("Error loading project:", error);
+  }
+}
+
+// Example usage:
+// loadExampleProject("path/to/your/example.dawproject");
 ```
 
-It generates CommonJS (in **dist/cjs** folder), ES Modules (in **dist/esm** folder), bundled and minified UMD (in **dist/umd** folder), as well as TypeScript declaration files (in **dist/types** folder).
+### **Creating an Empty DAWProject**
 
-### Try it before publishing
+```typescript
+import { DawProject, Project, Application, MetaData } from './src/dawproject';
+import * as fs from 'fs/promises'; // Requires Node.js fs module
 
-Run:
+async function createEmptyProject(filePath: string) {
+  try {
+    // Initialize an empty project
+    const project = new Project();
+    project.application = new Application("My TypeScript App", "1.0.0");
 
-```bash
-npm link
+    // Create minimal metadata
+    const metadata = new MetaData();
+    metadata.title = "Empty Project";
+
+    // Save the project as a .dawproject container (ZIP)
+    const embeddedFiles = {}; // No embedded files for an empty project
+    const zipData = await DawProject.save(project, metadata, embeddedFiles);
+
+    await fs.writeFile(filePath, zipData);
+    console.log(`Empty project saved to ${filePath}`);
+
+  } catch (error) {
+    console.error("Error creating project:", error);
+  }
+}
+
+// Example usage:
+// createEmptyProject("new_project.dawproject");
 ```
 
-[npm link](https://docs.npmjs.com/cli/v6/commands/npm-link) will create a symlink in the global folder, which may be **{prefix}/lib/node_modules/example-typescript-package** or **C:\Users\<username>\AppData\Roaming\npm\node_modules\example-typescript-package**.
+### **Creating a Project with Audio Tracks**
 
-Create an empty folder elsewhere, you don't even need to `npm init` (to generate **package.json**). Open the folder with VS Code, open a terminal and just run:
+```typescript
+import {
+  DawProject,
+  Project,
+  Application,
+  MetaData,
+  Track,
+  Channel,
+  RealParameter,
+  Unit,
+  ContentType,
+  MixerRole,
+  Utility,
+  Referenceable // Needed for destination reference
+} from './src/dawproject';
+import * as fs from 'fs/promises'; // Requires Node.js fs module
 
-```bash
-npm link example-typescript-package
+async function createAudioProject(filePath: string) {
+  try {
+    // Reset ID counter for deterministic IDs in examples
+    Referenceable.resetIdCounter();
+
+    // Initialize a project
+    const project = new Project();
+    project.application = new Application("My Audio App", "1.0.0");
+
+    // Create a master track
+    const masterTrack = Utility.createTrack(
+      "Master",
+      new Set(), // Master track typically has no specific content type
+      MixerRole.MASTER,
+      1.0, // volume
+      0.5  // pan (center)
+    );
+    project.structure.push(masterTrack);
+
+    // Create an audio track
+    const audioTrack = Utility.createTrack(
+      "Lead Synth",
+      new Set([ContentType.AUDIO]),
+      MixerRole.REGULAR,
+      0.8, // volume
+      0.2  // pan (slightly left)
+    );
+
+    // Route the audio track's channel to the master track's channel
+    if (audioTrack.channel && masterTrack.channel) {
+        audioTrack.channel.destination = masterTrack.channel;
+    } else {
+        console.warn("Could not connect audio track channel to master track channel.");
+    }
+
+    // Add the track to the project structure
+    project.structure.push(audioTrack);
+
+    // Create minimal metadata
+    const metadata = new MetaData();
+    metadata.title = "Audio Project";
+
+    // Save the project as a .dawproject container (ZIP)
+    const embeddedFiles = {}; // No embedded files in this basic example
+    const zipData = await DawProject.save(project, metadata, embeddedFiles);
+
+    await fs.writeFile(filePath, zipData);
+    console.log(`Audio project saved to ${filePath}`);
+
+  } catch (error) {
+    console.error("Error creating audio project:", error);
+  }
+}
+
+// Example usage:
+// createAudioProject("audio_project.dawproject");
 ```
 
-This will create a symbolic link from globally-installed example-typescript-package to **node_modules/** of the current folder.
+## 🚀 Getting Started
 
-You can then create a, for example, **testnum.ts** file with the content:
+To run the examples or integrate the library into your project:
 
-```ts
-import { Num } from 'example-typescript-package'
-console.log(new Num(5).add(new Num(6)).val() === 11)
+1. Clone the repository:
+
+    ```sh
+    git clone https://github.com/perivar/dawproject-typescript.git
+    cd dawproject-ts
+    ```
+
+2. Install dependencies:
+
+    ```sh
+    npm install
+    # or
+    yarn install
+    ```
+
+3. You can use `ts-node` to run TypeScript files directly or compile your TypeScript code to JavaScript.
+
+## 🏗 Examples
+
+An `src/dawproject_examples` folder is included in this repository, demonstrating how to use DAWProject-TS in real-world scenarios.
+
+To execute an example script (e.g., `createExampleProject.ts`), navigate to the project directory in your terminal and run using `ts-node`:
+
+```sh
+npx ts-node src/dawproject_examples/createExampleProject.ts
 ```
 
-If you don't see any linting errors in VS Code, if you put your mouse cursor over `Num` and see its type, then it's all good.
+This will typically create a `.dawproject` file in a designated output directory (check the example script for details).
 
-Whenever you want to uninstall the globally-installed example-typescript-package and remove the symlink in the global folder, run:
+## 📜 DAWProject Format
 
-```bash
-npm uninstall example-typescript-package -g
+DAWProject is an **open XML-based format** designed to enable **cross-DAW compatibility**. Instead of exporting audio stems, `.dawproject` files allow projects to be shared across DAWs while preserving:
+
+- 🎚 **Track names, volume, and panning**
+- 🎛 **Effects and automation data**
+- 🎵 **MIDI and audio region placements**
+- 🕒 **Tempo and time signature changes**
+
+For the full specification, visit [DAWProject on GitHub](https://github.com/bitwig/dawproject).
+
+## 🛠 Development & Contributions
+
+We **welcome contributions!** If you’d like to extend **DAWProject-TS**, whether by improving existing functionality or turning it into an **npm package**, feel free to contribute!
+
+### **Clone the Repository**
+
+```sh
+git clone https://github.com/perivar/dawproject-typescript.git
+cd dawproject-ts
 ```
 
-### Prepare to publish
+### **Contributing**
 
-Create an [npm](https://www.npmjs.com/) account.
+- Fork the repository
+- Create a feature branch (`git checkout -b feature-name`)
+- Implement your changes and ensure tests pass (`npm test` or `yarn test`)
+- Commit your changes (`git commit -m "Add feature XYZ"`)
+- Push to GitHub (`git push origin feature-name`)
+- Open a **Pull Request** 🚀
 
-<details><summary><strong>Click to read this section if you do manual publishing</strong></summary>
+## 📜 License
 
-#### Manual publishing to npm
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-Log in:
+## 🌎 Stay Connected
 
-```bash
-npm adduser
-```
+📢 Have ideas or feedback? Open an issue or start a discussion!
+discussions) *(Note: Link may need to be created)*
+⭐ **Star this repo** if you find it useful!
 
-And publish:
+---
 
-```bash
-npm publish
-```
-
-</details>
-
-This package is configured to use GitHub Actions CI/CD to automate both the **npm** and **GitHub Packages** publishing process. The following are what you have to do.
-
-#### CI publishing to npm
-
-Follow [npm's official instruction](https://docs.npmjs.com/creating-and-viewing-access-tokens) to create an npm token. Choose "Publish" from the website, or use `npm token create` without argument with the CLI.
-
-If you use 2FA, then make sure it's enabled for **authorization** only instead of **authorization and publishing** (**Edit Profile** -> **Modify 2FA**).
-
-On the page of your newly created or existing GitHub repo, click **Settings** -> **Secrets** -> **New repository secret**, the **Name** should be `NPM_TOKEN` and the **Value** should be your npm token.
-
-#### CI publishing to GitHub Packages
-
-The default configuration of this example package **assumes you publish package with an unscoped name to npm**. GitHub Packages must be named with a scope name such as "@tomchen/example-typescript-package".
-
-Change `scope: '@tomchen'` to your own scope in **.github/workflows/publish.yml**, also change `addscope` in **package.json**.
-
-If you publish package with a scoped name to npm, change the name to something like "@tomchen/example-typescript-package" in **package.json**, and remove the `- run: npm run addscope` line in **.github/workflows/publish.yml**
-
-If you publish your package to npm only, and don't want to publish to GitHub Packages, then delete the lines from `- name: Setup .npmrc file to publish to GitHub Packages` to the end of the file in **.github/workflows/publish.yml**.
-
-(You might have noticed `secret.GITHUB_TOKEN` in **.github/workflows/publish.yml**. You don't need to set up a secret named `GITHUB_TOKEN` actually, it is [automatically created](https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow#about-the-github_token-secret))
-
-### Publish
-
-Now everything is set. The example package has automated tests and upload (publishing) already set up with GitHub Actions:
-
-- Every time you `git push` or a pull request is submitted on your `master` or `main` branch, the package is automatically tested against the desired OS and Node.js versions with GitHub Actions.
-- Every time an [**annotated**](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_annotated_tags) (not [lightweight](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags)) "v*" tag is pushed onto GitHub, a GitHub release is automatically generated from this version, it also automatically publishes to the npm registry and/or GitHub Packages registry to update the package there.
-  - [`npm version`](https://docs.npmjs.com/cli/version/) / [`yarn version`](https://yarnpkg.com/cli/version) is useful to create tags.
-  - (npm or yarn v1, not yarn v2) You could also add `"postversion": "git push --follow-tags"` to **package.json** file to push it automatically after `npm` or `yarn` `version`.
-  - (yarn v1, not v2) because `yarn version` doesn't check whether there are uncommitted changes, you can add `"preversion": "git diff-index --quiet HEAD --"` to **package.json**
-    - Note: `preversion`, `postversion` doesn't work in yarn v2
-
-For npm registry: you can unpublish a version or the whole package but can never re-publish the same version under the same name.
-
-If you want to modify the description / README on the npm package page, you have to publish a new version. You can modify the description on GitHub Packages without publishing.
-
-## Notes
-
-- It uses npm but you can easily switch to yarn, of course (remember to change all "npm" in `scripts` in the file **package.json**)
-  - Whether you use npm as your package manager ≠ Whether you can publish to the npm registry
-- Works fine in VS Code. In my configuration **.eslintrc** and **.prettierrc** cooperate perfectly
-- See `scripts` in **package.json** for other predefined script commands
-- [pinst](https://github.com/typicode/pinst) is used to solve [a problem of husky](https://typicode.github.io/husky/#/?id=yarn-2)
-- The installation of the package with npm, yarn v1 and yarn v2+ is ensured in [this test](https://github.com/tomchen/example-typescript-package-test)
-
-## References
-
-- [Creating and publishing unscoped public packages - npm docs](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages)
-- [npm-publish - npm docs](https://docs.npmjs.com/cli/v6/commands/npm-publish)
-- [Publishing - TypeScript docs](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html)
-- [Publishing Node.js packages - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/guides/publishing-nodejs-packages)
-
-Btw, if you want to publish Python package, go to [Example PyPI (Python Package Index) Package & Tutorial / Instruction / Workflow for 2021](https://github.com/tomchen/example_pypi_package).
+🎶 **DAWProject-Typescript – Enabling DAW interoperability!** 🚀
