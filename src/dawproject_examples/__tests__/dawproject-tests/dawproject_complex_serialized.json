@@ -1,0 +1,703 @@
+{
+  "version": "1.0",
+  "application": {
+    "name": "Test",
+    "version": "1.0"
+  },
+  "transport": {
+    "tempo": {
+      "id": "id0",
+      "value": 120,
+      "unit": "bpm"
+    }
+  },
+  "structure": [
+    {
+      "name": "Master",
+      "id": "id4",
+      "contentType": [],
+      "loaded": true,
+      "channel": {
+        "id": "id3",
+        "role": "master",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id1",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id2",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id5",
+            "deviceRole": "audioFX",
+            "deviceName": "Limiter",
+            "loaded": true,
+            "state": {
+              "path": "plugin-states/12323545.vstpreset",
+              "external": false
+            },
+            "parameters": []
+          }
+        ]
+      },
+      "tracks": []
+    },
+    {
+      "name": "Track 1",
+      "color": "#000000",
+      "id": "id12",
+      "contentType": [
+        "notes"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id11",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id9",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id10",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": [
+            {
+              "id": "id5",
+              "deviceRole": "audioFX",
+              "deviceName": "Limiter",
+              "loaded": true,
+              "state": {
+                "path": "plugin-states/12323545.vstpreset",
+                "external": false
+              },
+              "parameters": []
+            }
+          ]
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    },
+    {
+      "name": "Track 2",
+      "color": "#111111",
+      "id": "id20",
+      "contentType": [
+        "notes"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id19",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id17",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id18",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": [
+            {
+              "id": "id5",
+              "deviceRole": "audioFX",
+              "deviceName": "Limiter",
+              "loaded": true,
+              "state": {
+                "path": "plugin-states/12323545.vstpreset",
+                "external": false
+              },
+              "parameters": []
+            }
+          ]
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    },
+    {
+      "name": "Track 3",
+      "color": "#222222",
+      "id": "id27",
+      "contentType": [
+        "notes"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id26",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id24",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id25",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": [
+            {
+              "id": "id5",
+              "deviceRole": "audioFX",
+              "deviceName": "Limiter",
+              "loaded": true,
+              "state": {
+                "path": "plugin-states/12323545.vstpreset",
+                "external": false
+              },
+              "parameters": []
+            }
+          ]
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    }
+  ],
+  "arrangement": {
+    "id": "id6",
+    "markers": {
+      "id": "id8",
+      "markers": [
+        {
+          "name": "Verse",
+          "time": 0
+        },
+        {
+          "name": "Chorus",
+          "time": 24
+        }
+      ]
+    },
+    "lanes": {
+      "id": "id7",
+      "timeUnit": "beats",
+      "lanes": [
+        {
+          "id": "id13",
+          "track": {
+            "name": "Track 1",
+            "color": "#000000",
+            "id": "id12",
+            "contentType": [
+              "notes"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id11",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id9",
+                "value": 1,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id10",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": [
+                  {
+                    "id": "id5",
+                    "deviceRole": "audioFX",
+                    "deviceName": "Limiter",
+                    "loaded": true,
+                    "state": {
+                      "path": "plugin-states/12323545.vstpreset",
+                      "external": false
+                    },
+                    "parameters": []
+                  }
+                ]
+              },
+              "sends": [],
+              "devices": []
+            },
+            "tracks": []
+          },
+          "lanes": [
+            {
+              "id": "id14",
+              "clips": [
+                {
+                  "name": "Clip 0",
+                  "time": 0,
+                  "duration": 4,
+                  "content": {
+                    "id": "id15",
+                    "notes": [
+                      {
+                        "time": 0,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 0.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Alias Clip 0",
+                  "time": 32,
+                  "duration": 4,
+                  "reference": "id15"
+                }
+              ]
+            },
+            {
+              "id": "id16",
+              "target": {
+                "parameter": {
+                  "id": "id9",
+                  "value": 1,
+                  "unit": "linear"
+                }
+              },
+              "points": [
+                {
+                  "time": 0,
+                  "value": 0,
+                  "interpolation": "linear"
+                },
+                {
+                  "time": 8,
+                  "value": 1,
+                  "interpolation": "linear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "id21",
+          "track": {
+            "name": "Track 2",
+            "color": "#111111",
+            "id": "id20",
+            "contentType": [
+              "notes"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id19",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id17",
+                "value": 1,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id18",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": [
+                  {
+                    "id": "id5",
+                    "deviceRole": "audioFX",
+                    "deviceName": "Limiter",
+                    "loaded": true,
+                    "state": {
+                      "path": "plugin-states/12323545.vstpreset",
+                      "external": false
+                    },
+                    "parameters": []
+                  }
+                ]
+              },
+              "sends": [],
+              "devices": []
+            },
+            "tracks": []
+          },
+          "lanes": [
+            {
+              "id": "id22",
+              "clips": [
+                {
+                  "name": "Clip 1",
+                  "time": 8,
+                  "duration": 4,
+                  "content": {
+                    "id": "id23",
+                    "notes": [
+                      {
+                        "time": 0,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 0.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Alias Clip 1",
+                  "time": 40,
+                  "duration": 4,
+                  "reference": "id23"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "id28",
+          "track": {
+            "name": "Track 3",
+            "color": "#222222",
+            "id": "id27",
+            "contentType": [
+              "notes"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id26",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id24",
+                "value": 1,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id25",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": [
+                  {
+                    "id": "id5",
+                    "deviceRole": "audioFX",
+                    "deviceName": "Limiter",
+                    "loaded": true,
+                    "state": {
+                      "path": "plugin-states/12323545.vstpreset",
+                      "external": false
+                    },
+                    "parameters": []
+                  }
+                ]
+              },
+              "sends": [],
+              "devices": []
+            },
+            "tracks": []
+          },
+          "lanes": [
+            {
+              "id": "id29",
+              "clips": [
+                {
+                  "name": "Clip 2",
+                  "time": 16,
+                  "duration": 4,
+                  "content": {
+                    "id": "id30",
+                    "notes": [
+                      {
+                        "time": 0,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 0.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1,
+                        "duration": 0.5,
+                        "key": 60,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2.5,
+                        "duration": 0.5,
+                        "key": 60,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Alias Clip 2",
+                  "time": 48,
+                  "duration": 4,
+                  "reference": "id30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scenes": []
+}

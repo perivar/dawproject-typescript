@@ -1,0 +1,394 @@
+{
+  "version": "1.0",
+  "application": {
+    "name": "Test",
+    "version": "1.0"
+  },
+  "transport": {
+    "tempo": {
+      "id": "id0",
+      "value": 120,
+      "unit": "bpm"
+    }
+  },
+  "structure": [
+    {
+      "name": "Master",
+      "id": "id4",
+      "contentType": [],
+      "loaded": true,
+      "channel": {
+        "id": "id3",
+        "role": "master",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id1",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id2",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    },
+    {
+      "name": "Track 1",
+      "color": "#000000",
+      "id": "id10",
+      "contentType": [
+        "notes"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id9",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id7",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id8",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    },
+    {
+      "name": "Track 2",
+      "color": "#111111",
+      "id": "id17",
+      "contentType": [
+        "notes"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id16",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id14",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id15",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    }
+  ],
+  "arrangement": {
+    "id": "id5",
+    "lanes": {
+      "id": "id6",
+      "timeUnit": "beats",
+      "lanes": [
+        {
+          "id": "id11",
+          "track": {
+            "name": "Track 1",
+            "color": "#000000",
+            "id": "id10",
+            "contentType": [
+              "notes"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id9",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id7",
+                "value": 1,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id8",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": []
+            },
+            "tracks": []
+          },
+          "lanes": [
+            {
+              "id": "id12",
+              "clips": [
+                {
+                  "name": "Clip 0",
+                  "time": 0,
+                  "duration": 4,
+                  "content": {
+                    "id": "id13",
+                    "notes": [
+                      {
+                        "time": 0,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 0.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3.5,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "id18",
+          "track": {
+            "name": "Track 2",
+            "color": "#111111",
+            "id": "id17",
+            "contentType": [
+              "notes"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id16",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id14",
+                "value": 1,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id15",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": []
+            },
+            "tracks": []
+          },
+          "lanes": [
+            {
+              "id": "id19",
+              "clips": [
+                {
+                  "name": "Clip 1",
+                  "time": 8,
+                  "duration": 4,
+                  "content": {
+                    "id": "id20",
+                    "notes": [
+                      {
+                        "time": 0,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 0.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 1.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 2.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3,
+                        "duration": 0.5,
+                        "key": 36,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      },
+                      {
+                        "time": 3.5,
+                        "duration": 0.5,
+                        "key": 48,
+                        "channel": 0,
+                        "velocity": 0.8,
+                        "releaseVelocity": 0.5
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scenes": []
+}

@@ -1,0 +1,1540 @@
+{
+  "version": "1.0",
+  "application": {
+    "name": "RoEx Automix",
+    "version": "1.0"
+  },
+  "transport": {
+    "tempo": {
+      "id": "id0",
+      "value": 120,
+      "unit": "bpm"
+    }
+  },
+  "structure": [
+    {
+      "name": "Master",
+      "id": "id4",
+      "contentType": [],
+      "loaded": true,
+      "channel": {
+        "id": "id3",
+        "role": "master",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id1",
+          "value": 1,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id2",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "sends": [],
+        "devices": []
+      },
+      "tracks": []
+    },
+    {
+      "name": "masks-bass.wav",
+      "id": "id10",
+      "contentType": [
+        "audio"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id9",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id7",
+          "value": 0.7,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id8",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id21",
+            "deviceRole": "audioFX",
+            "deviceName": "Eq_1",
+            "loaded": true,
+            "parameters": [],
+            "bands": [
+              {
+                "type": "bell",
+                "freq": {
+                  "id": "id13",
+                  "value": 100,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id14",
+                  "value": 6,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id15",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id16",
+                  "value": true
+                }
+              },
+              {
+                "type": "highShelf",
+                "freq": {
+                  "id": "id17",
+                  "value": 1000,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id18",
+                  "value": -3,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id19",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id20",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "id": "id29",
+            "deviceRole": "audioFX",
+            "deviceName": "Compressor_1",
+            "loaded": true,
+            "parameters": [],
+            "threshold": {
+              "id": "id22",
+              "value": -15,
+              "unit": "decibel"
+            },
+            "ratio": {
+              "id": "id23",
+              "value": 0.5,
+              "unit": "percent"
+            },
+            "attack": {
+              "id": "id24",
+              "value": 0.01,
+              "unit": "seconds"
+            },
+            "release": {
+              "id": "id25",
+              "value": 0.2,
+              "unit": "seconds"
+            },
+            "inputGain": {
+              "id": "id26",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "outputGain": {
+              "id": "id27",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "autoMakeup": {
+              "id": "id28",
+              "value": true
+            }
+          }
+        ]
+      },
+      "tracks": []
+    },
+    {
+      "name": "masks-chord.wav",
+      "id": "id33",
+      "contentType": [
+        "audio"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id32",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id30",
+          "value": 0.9,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id31",
+          "value": 0.7,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id44",
+            "deviceRole": "audioFX",
+            "deviceName": "Eq_2",
+            "loaded": true,
+            "parameters": [],
+            "bands": [
+              {
+                "type": "bell",
+                "freq": {
+                  "id": "id36",
+                  "value": 100,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id37",
+                  "value": 6,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id38",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id39",
+                  "value": true
+                }
+              },
+              {
+                "type": "highShelf",
+                "freq": {
+                  "id": "id40",
+                  "value": 1000,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id41",
+                  "value": -3,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id42",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id43",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "id": "id52",
+            "deviceRole": "audioFX",
+            "deviceName": "Compressor_2",
+            "loaded": true,
+            "parameters": [],
+            "threshold": {
+              "id": "id45",
+              "value": -15,
+              "unit": "decibel"
+            },
+            "ratio": {
+              "id": "id46",
+              "value": 0.5,
+              "unit": "percent"
+            },
+            "attack": {
+              "id": "id47",
+              "value": 0.01,
+              "unit": "seconds"
+            },
+            "release": {
+              "id": "id48",
+              "value": 0.2,
+              "unit": "seconds"
+            },
+            "inputGain": {
+              "id": "id49",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "outputGain": {
+              "id": "id50",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "autoMakeup": {
+              "id": "id51",
+              "value": true
+            }
+          }
+        ]
+      },
+      "tracks": []
+    },
+    {
+      "name": "masks-kick.wav",
+      "id": "id56",
+      "contentType": [
+        "audio"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id55",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id53",
+          "value": 0.2,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id54",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id67",
+            "deviceRole": "audioFX",
+            "deviceName": "Eq_3",
+            "loaded": true,
+            "parameters": [],
+            "bands": [
+              {
+                "type": "bell",
+                "freq": {
+                  "id": "id59",
+                  "value": 100,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id60",
+                  "value": 6,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id61",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id62",
+                  "value": true
+                }
+              },
+              {
+                "type": "highShelf",
+                "freq": {
+                  "id": "id63",
+                  "value": 1000,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id64",
+                  "value": -3,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id65",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id66",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "id": "id75",
+            "deviceRole": "audioFX",
+            "deviceName": "Compressor_3",
+            "loaded": true,
+            "parameters": [],
+            "threshold": {
+              "id": "id68",
+              "value": -15,
+              "unit": "decibel"
+            },
+            "ratio": {
+              "id": "id69",
+              "value": 0.3,
+              "unit": "percent"
+            },
+            "attack": {
+              "id": "id70",
+              "value": 0.01,
+              "unit": "seconds"
+            },
+            "release": {
+              "id": "id71",
+              "value": 0.2,
+              "unit": "seconds"
+            },
+            "inputGain": {
+              "id": "id72",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "outputGain": {
+              "id": "id73",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "autoMakeup": {
+              "id": "id74",
+              "value": true
+            }
+          }
+        ]
+      },
+      "tracks": []
+    },
+    {
+      "name": "masks-percussion.wav",
+      "id": "id79",
+      "contentType": [
+        "audio"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id78",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id76",
+          "value": 0.7,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id77",
+          "value": 0.5,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id90",
+            "deviceRole": "audioFX",
+            "deviceName": "Eq_4",
+            "loaded": true,
+            "parameters": [],
+            "bands": [
+              {
+                "type": "bell",
+                "freq": {
+                  "id": "id82",
+                  "value": 100,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id83",
+                  "value": 6,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id84",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id85",
+                  "value": true
+                }
+              },
+              {
+                "type": "highShelf",
+                "freq": {
+                  "id": "id86",
+                  "value": 1000,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id87",
+                  "value": -3,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id88",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id89",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "id": "id98",
+            "deviceRole": "audioFX",
+            "deviceName": "Compressor_4",
+            "loaded": true,
+            "parameters": [],
+            "threshold": {
+              "id": "id91",
+              "value": -5,
+              "unit": "decibel"
+            },
+            "ratio": {
+              "id": "id92",
+              "value": 0.2,
+              "unit": "percent"
+            },
+            "attack": {
+              "id": "id93",
+              "value": 0.01,
+              "unit": "seconds"
+            },
+            "release": {
+              "id": "id94",
+              "value": 0.2,
+              "unit": "seconds"
+            },
+            "inputGain": {
+              "id": "id95",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "outputGain": {
+              "id": "id96",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "autoMakeup": {
+              "id": "id97",
+              "value": true
+            }
+          }
+        ]
+      },
+      "tracks": []
+    },
+    {
+      "name": "masks-synth.wav",
+      "id": "id102",
+      "contentType": [
+        "audio"
+      ],
+      "loaded": true,
+      "channel": {
+        "id": "id101",
+        "role": "regular",
+        "audioChannels": 2,
+        "volume": {
+          "id": "id99",
+          "value": 0.4,
+          "unit": "linear"
+        },
+        "pan": {
+          "id": "id100",
+          "value": 0.2,
+          "unit": "normalized"
+        },
+        "destination": {
+          "id": "id3",
+          "role": "master",
+          "audioChannels": 2,
+          "volume": {
+            "id": "id1",
+            "value": 1,
+            "unit": "linear"
+          },
+          "pan": {
+            "id": "id2",
+            "value": 0.5,
+            "unit": "normalized"
+          },
+          "sends": [],
+          "devices": []
+        },
+        "sends": [],
+        "devices": [
+          {
+            "id": "id113",
+            "deviceRole": "audioFX",
+            "deviceName": "Eq_5",
+            "loaded": true,
+            "parameters": [],
+            "bands": [
+              {
+                "type": "bell",
+                "freq": {
+                  "id": "id105",
+                  "value": 100,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id106",
+                  "value": 6,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id107",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id108",
+                  "value": true
+                }
+              },
+              {
+                "type": "highShelf",
+                "freq": {
+                  "id": "id109",
+                  "value": 1000,
+                  "unit": "hertz"
+                },
+                "gain": {
+                  "id": "id110",
+                  "value": -3,
+                  "unit": "decibel"
+                },
+                "q": {
+                  "id": "id111",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "enabled": {
+                  "id": "id112",
+                  "value": true
+                }
+              }
+            ]
+          },
+          {
+            "id": "id121",
+            "deviceRole": "audioFX",
+            "deviceName": "Compressor_5",
+            "loaded": true,
+            "parameters": [],
+            "threshold": {
+              "id": "id114",
+              "value": -35,
+              "unit": "decibel"
+            },
+            "ratio": {
+              "id": "id115",
+              "value": 0.7,
+              "unit": "percent"
+            },
+            "attack": {
+              "id": "id116",
+              "value": 0.01,
+              "unit": "seconds"
+            },
+            "release": {
+              "id": "id117",
+              "value": 0.2,
+              "unit": "seconds"
+            },
+            "inputGain": {
+              "id": "id118",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "outputGain": {
+              "id": "id119",
+              "value": 0,
+              "unit": "decibel"
+            },
+            "autoMakeup": {
+              "id": "id120",
+              "value": true
+            }
+          }
+        ]
+      },
+      "tracks": []
+    }
+  ],
+  "arrangement": {
+    "id": "id5",
+    "lanes": {
+      "id": "id6",
+      "timeUnit": "seconds",
+      "lanes": [
+        {
+          "id": "id12",
+          "track": {
+            "name": "masks-bass.wav",
+            "id": "id10",
+            "contentType": [
+              "audio"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id9",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id7",
+                "value": 0.7,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id8",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": [
+                {
+                  "id": "id21",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Eq_1",
+                  "loaded": true,
+                  "parameters": [],
+                  "bands": [
+                    {
+                      "type": "bell",
+                      "freq": {
+                        "id": "id13",
+                        "value": 100,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id14",
+                        "value": 6,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id15",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id16",
+                        "value": true
+                      }
+                    },
+                    {
+                      "type": "highShelf",
+                      "freq": {
+                        "id": "id17",
+                        "value": 1000,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id18",
+                        "value": -3,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id19",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id20",
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "id29",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Compressor_1",
+                  "loaded": true,
+                  "parameters": [],
+                  "threshold": {
+                    "id": "id22",
+                    "value": -15,
+                    "unit": "decibel"
+                  },
+                  "ratio": {
+                    "id": "id23",
+                    "value": 0.5,
+                    "unit": "percent"
+                  },
+                  "attack": {
+                    "id": "id24",
+                    "value": 0.01,
+                    "unit": "seconds"
+                  },
+                  "release": {
+                    "id": "id25",
+                    "value": 0.2,
+                    "unit": "seconds"
+                  },
+                  "inputGain": {
+                    "id": "id26",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "outputGain": {
+                    "id": "id27",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "autoMakeup": {
+                    "id": "id28",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "tracks": []
+          },
+          "clips": [
+            {
+              "time": 0,
+              "duration": 30,
+              "contentTimeUnit": "seconds",
+              "playStart": 0,
+              "content": {
+                "id": "id11",
+                "timeUnit": "seconds",
+                "file": {
+                  "path": "masks-bass.wav",
+                  "external": true
+                },
+                "duration": 30,
+                "sampleRate": 44100,
+                "channels": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "id35",
+          "track": {
+            "name": "masks-chord.wav",
+            "id": "id33",
+            "contentType": [
+              "audio"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id32",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id30",
+                "value": 0.9,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id31",
+                "value": 0.7,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": [
+                {
+                  "id": "id44",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Eq_2",
+                  "loaded": true,
+                  "parameters": [],
+                  "bands": [
+                    {
+                      "type": "bell",
+                      "freq": {
+                        "id": "id36",
+                        "value": 100,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id37",
+                        "value": 6,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id38",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id39",
+                        "value": true
+                      }
+                    },
+                    {
+                      "type": "highShelf",
+                      "freq": {
+                        "id": "id40",
+                        "value": 1000,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id41",
+                        "value": -3,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id42",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id43",
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "id52",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Compressor_2",
+                  "loaded": true,
+                  "parameters": [],
+                  "threshold": {
+                    "id": "id45",
+                    "value": -15,
+                    "unit": "decibel"
+                  },
+                  "ratio": {
+                    "id": "id46",
+                    "value": 0.5,
+                    "unit": "percent"
+                  },
+                  "attack": {
+                    "id": "id47",
+                    "value": 0.01,
+                    "unit": "seconds"
+                  },
+                  "release": {
+                    "id": "id48",
+                    "value": 0.2,
+                    "unit": "seconds"
+                  },
+                  "inputGain": {
+                    "id": "id49",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "outputGain": {
+                    "id": "id50",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "autoMakeup": {
+                    "id": "id51",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "tracks": []
+          },
+          "clips": [
+            {
+              "time": 0,
+              "duration": 30,
+              "contentTimeUnit": "seconds",
+              "playStart": 0,
+              "content": {
+                "id": "id34",
+                "timeUnit": "seconds",
+                "file": {
+                  "path": "masks-chord.wav",
+                  "external": true
+                },
+                "duration": 30,
+                "sampleRate": 44100,
+                "channels": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "id58",
+          "track": {
+            "name": "masks-kick.wav",
+            "id": "id56",
+            "contentType": [
+              "audio"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id55",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id53",
+                "value": 0.2,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id54",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": [
+                {
+                  "id": "id67",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Eq_3",
+                  "loaded": true,
+                  "parameters": [],
+                  "bands": [
+                    {
+                      "type": "bell",
+                      "freq": {
+                        "id": "id59",
+                        "value": 100,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id60",
+                        "value": 6,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id61",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id62",
+                        "value": true
+                      }
+                    },
+                    {
+                      "type": "highShelf",
+                      "freq": {
+                        "id": "id63",
+                        "value": 1000,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id64",
+                        "value": -3,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id65",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id66",
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "id75",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Compressor_3",
+                  "loaded": true,
+                  "parameters": [],
+                  "threshold": {
+                    "id": "id68",
+                    "value": -15,
+                    "unit": "decibel"
+                  },
+                  "ratio": {
+                    "id": "id69",
+                    "value": 0.3,
+                    "unit": "percent"
+                  },
+                  "attack": {
+                    "id": "id70",
+                    "value": 0.01,
+                    "unit": "seconds"
+                  },
+                  "release": {
+                    "id": "id71",
+                    "value": 0.2,
+                    "unit": "seconds"
+                  },
+                  "inputGain": {
+                    "id": "id72",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "outputGain": {
+                    "id": "id73",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "autoMakeup": {
+                    "id": "id74",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "tracks": []
+          },
+          "clips": [
+            {
+              "time": 0,
+              "duration": 30,
+              "contentTimeUnit": "seconds",
+              "playStart": 0,
+              "content": {
+                "id": "id57",
+                "timeUnit": "seconds",
+                "file": {
+                  "path": "masks-kick.wav",
+                  "external": true
+                },
+                "duration": 30,
+                "sampleRate": 44100,
+                "channels": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "id81",
+          "track": {
+            "name": "masks-percussion.wav",
+            "id": "id79",
+            "contentType": [
+              "audio"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id78",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id76",
+                "value": 0.7,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id77",
+                "value": 0.5,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": [
+                {
+                  "id": "id90",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Eq_4",
+                  "loaded": true,
+                  "parameters": [],
+                  "bands": [
+                    {
+                      "type": "bell",
+                      "freq": {
+                        "id": "id82",
+                        "value": 100,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id83",
+                        "value": 6,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id84",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id85",
+                        "value": true
+                      }
+                    },
+                    {
+                      "type": "highShelf",
+                      "freq": {
+                        "id": "id86",
+                        "value": 1000,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id87",
+                        "value": -3,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id88",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id89",
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "id98",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Compressor_4",
+                  "loaded": true,
+                  "parameters": [],
+                  "threshold": {
+                    "id": "id91",
+                    "value": -5,
+                    "unit": "decibel"
+                  },
+                  "ratio": {
+                    "id": "id92",
+                    "value": 0.2,
+                    "unit": "percent"
+                  },
+                  "attack": {
+                    "id": "id93",
+                    "value": 0.01,
+                    "unit": "seconds"
+                  },
+                  "release": {
+                    "id": "id94",
+                    "value": 0.2,
+                    "unit": "seconds"
+                  },
+                  "inputGain": {
+                    "id": "id95",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "outputGain": {
+                    "id": "id96",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "autoMakeup": {
+                    "id": "id97",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "tracks": []
+          },
+          "clips": [
+            {
+              "time": 0,
+              "duration": 30,
+              "contentTimeUnit": "seconds",
+              "playStart": 0,
+              "content": {
+                "id": "id80",
+                "timeUnit": "seconds",
+                "file": {
+                  "path": "masks-percussion.wav",
+                  "external": true
+                },
+                "duration": 30,
+                "sampleRate": 44100,
+                "channels": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "id104",
+          "track": {
+            "name": "masks-synth.wav",
+            "id": "id102",
+            "contentType": [
+              "audio"
+            ],
+            "loaded": true,
+            "channel": {
+              "id": "id101",
+              "role": "regular",
+              "audioChannels": 2,
+              "volume": {
+                "id": "id99",
+                "value": 0.4,
+                "unit": "linear"
+              },
+              "pan": {
+                "id": "id100",
+                "value": 0.2,
+                "unit": "normalized"
+              },
+              "destination": {
+                "id": "id3",
+                "role": "master",
+                "audioChannels": 2,
+                "volume": {
+                  "id": "id1",
+                  "value": 1,
+                  "unit": "linear"
+                },
+                "pan": {
+                  "id": "id2",
+                  "value": 0.5,
+                  "unit": "normalized"
+                },
+                "sends": [],
+                "devices": []
+              },
+              "sends": [],
+              "devices": [
+                {
+                  "id": "id113",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Eq_5",
+                  "loaded": true,
+                  "parameters": [],
+                  "bands": [
+                    {
+                      "type": "bell",
+                      "freq": {
+                        "id": "id105",
+                        "value": 100,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id106",
+                        "value": 6,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id107",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id108",
+                        "value": true
+                      }
+                    },
+                    {
+                      "type": "highShelf",
+                      "freq": {
+                        "id": "id109",
+                        "value": 1000,
+                        "unit": "hertz"
+                      },
+                      "gain": {
+                        "id": "id110",
+                        "value": -3,
+                        "unit": "decibel"
+                      },
+                      "q": {
+                        "id": "id111",
+                        "value": 1,
+                        "unit": "linear"
+                      },
+                      "enabled": {
+                        "id": "id112",
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "id121",
+                  "deviceRole": "audioFX",
+                  "deviceName": "Compressor_5",
+                  "loaded": true,
+                  "parameters": [],
+                  "threshold": {
+                    "id": "id114",
+                    "value": -35,
+                    "unit": "decibel"
+                  },
+                  "ratio": {
+                    "id": "id115",
+                    "value": 0.7,
+                    "unit": "percent"
+                  },
+                  "attack": {
+                    "id": "id116",
+                    "value": 0.01,
+                    "unit": "seconds"
+                  },
+                  "release": {
+                    "id": "id117",
+                    "value": 0.2,
+                    "unit": "seconds"
+                  },
+                  "inputGain": {
+                    "id": "id118",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "outputGain": {
+                    "id": "id119",
+                    "value": 0,
+                    "unit": "decibel"
+                  },
+                  "autoMakeup": {
+                    "id": "id120",
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "tracks": []
+          },
+          "clips": [
+            {
+              "time": 0,
+              "duration": 30,
+              "contentTimeUnit": "seconds",
+              "playStart": 0,
+              "content": {
+                "id": "id103",
+                "timeUnit": "seconds",
+                "file": {
+                  "path": "masks-synth.wav",
+                  "external": true
+                },
+                "duration": 30,
+                "sampleRate": 44100,
+                "channels": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scenes": []
+}
