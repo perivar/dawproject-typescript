@@ -26,6 +26,8 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write # Needed to publish to GitHub Packages
     steps:
       - uses: actions/checkout@v4
       - name: Setup .npmrc file to publish to npm
