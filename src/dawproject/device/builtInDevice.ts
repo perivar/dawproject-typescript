@@ -67,6 +67,9 @@ export class BuiltInDevice extends Device implements IBuiltInDevice {
 
     // Handle device type using the registry
     for (const tagName in xmlObject) {
+      // Skip attributes (those starting with @_)
+      if (tagName.startsWith("@_")) continue;
+
       // Use the new createDeviceFromXml method
       const device = DeviceRegistry.createDeviceFromXml(
         tagName,

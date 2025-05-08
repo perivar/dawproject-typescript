@@ -143,21 +143,8 @@ export class Clip extends Nameable implements IClip {
 
     // handle content if present
     for (const tagName in xmlObject) {
-      if (
-        tagName === "@_time" ||
-        tagName === "@_duration" ||
-        tagName === "@_contentTimeUnit" ||
-        tagName === "@_playStart" ||
-        tagName === "@_playStop" ||
-        tagName === "@_loopStart" ||
-        tagName === "@_loopEnd" ||
-        tagName === "@_fadeTimeUnit" ||
-        tagName === "@_fadeInTime" ||
-        tagName === "@_fadeOutTime" ||
-        tagName === "@_reference"
-      ) {
-        continue; // Skip known properties
-      }
+      // Skip attributes (those starting with @_)
+      if (tagName.startsWith("@_")) continue;
 
       const timelineInstance = TimelineRegistry.createTimelineFromXml(
         tagName,

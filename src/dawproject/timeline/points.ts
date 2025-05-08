@@ -90,10 +90,10 @@ export class Points extends Timeline implements IPoints {
 
     // Iterate through all properties in xmlObject to find point elements
     for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_), the Target element, and other non-point elements
+      // Skip attributes (those starting with @_), the Target element, and Points elements
       if (
-        tagName === "Target" ||
         tagName.startsWith("@_") ||
+        tagName === "Target" ||
         tagName === "Points"
       )
         continue;
