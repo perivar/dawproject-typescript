@@ -33,7 +33,7 @@ yarn install
 Then, import it into your TypeScript/JavaScript project:
 
 ```typescript
-import { DawProject, Project, Application, Track, Channel, RealParameter, Unit, ContentType, MixerRole, Utility } from './src/dawproject';
+import { DawProject, Project, Application, Track, Channel, RealParameter, Unit, ContentType, MixerRole, Utility } from 'dawproject-typescript';
 ```
 *(Note: Update the import path based on your project structure)*
 
@@ -42,7 +42,7 @@ import { DawProject, Project, Application, Track, Channel, RealParameter, Unit, 
 ### **Loading a DAWProject file (.dawproject container)**
 
 ```typescript
-import { DawProject, Project } from './src/dawproject';
+import { DawProject, Project } from 'dawproject-typescript';
 import * as fs from 'fs/promises'; // Requires Node.js fs module
 
 async function loadExampleProject(filePath: string) {
@@ -67,7 +67,7 @@ async function loadExampleProject(filePath: string) {
 ### **Creating an Empty DAWProject**
 
 ```typescript
-import { DawProject, Project, Application, MetaData } from './src/dawproject';
+import { DawProject, Project, Application, MetaData } from 'dawproject-typescript';
 import * as fs from 'fs/promises'; // Requires Node.js fs module
 
 async function createEmptyProject(filePath: string) {
@@ -112,7 +112,7 @@ import {
   MixerRole,
   Utility,
   Referenceable // Needed for destination reference
-} from './src/dawproject';
+} from 'dawproject-typescript';
 import * as fs from 'fs/promises'; // Requires Node.js fs module
 
 async function createAudioProject(filePath: string) {
@@ -236,6 +236,23 @@ cd dawproject-ts
 - Commit your changes (`git commit -m "Add feature XYZ"`)
 - Push to GitHub (`git push origin feature-name`)
 - Open a **Pull Request** 🚀
+
+### Versioning and Releasing
+
+To create a new version of the package, update the version number in `package.json`, add a new version tag, and trigger the GitHub Actions workflow for releasing and publishing to npm and GitHub Packages, use the following command:
+
+```sh
+npm version patch
+```
+
+This command will:
+
+1. Increment the patch version number in `package.json`.
+2. Create a new Git commit.
+3. Create a new Git tag with the name `v[new_version]`.
+4. Pushing this tag to the remote repository will trigger the GitHub Actions workflow defined in `.github/workflows/publish.yml` to publish the package.
+
+The command will also make sure you have committed all your changes before publishing the package.
 
 ## 📜 License
 
