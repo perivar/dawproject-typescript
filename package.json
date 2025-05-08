@@ -1,6 +1,6 @@
 {
   "name": "dawproject-typescript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -22,7 +22,9 @@
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "format-fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "lint-fix": "eslint '**/*.{js,jsx,ts,tsx}' --fix"
+    "lint-fix": "eslint '**/*.{js,jsx,ts,tsx}' --fix",
+    "preversion": "npm test && git diff-index --quiet HEAD -- || (echo 'Uncommitted changes found.' && exit 1)",
+    "postversion": "git push && git push --tags"
   },
   "publishConfig": {
     "access": "public"
