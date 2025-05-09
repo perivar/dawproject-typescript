@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../dist/umd"),
     filename: "index.js",
-    library: "exampleTypescriptPackage",
+    library: "dawprojectTypescript",
     libraryTarget: "umd",
     globalObject: "this",
   },
