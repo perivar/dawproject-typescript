@@ -65,12 +65,11 @@ export class BuiltInDevice extends Device implements IBuiltInDevice {
   public fromXmlObject(xmlObject: any): this {
     super.fromXmlObject(xmlObject); // populate inherited attributes from Device
 
-    // Handle device type using the registry
     for (const tagName in xmlObject) {
       // Skip attributes (those starting with @_)
       if (tagName.startsWith("@_")) continue;
 
-      // Use the new createDeviceFromXml method
+      // Use DeviceRegistry to create device instances
       const device = DeviceRegistry.createDeviceFromXml(
         tagName,
         xmlObject[tagName]

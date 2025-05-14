@@ -105,6 +105,7 @@ export class Project extends XmlObject implements IProject {
 
         laneArray.forEach((laneObj: any) => {
           try {
+            // Use LaneRegistry to create lane instances
             const laneInstance = LaneRegistry.createLaneFromXml(
               tagName,
               laneObj

@@ -178,6 +178,7 @@ export class Channel extends Lane implements IChannel {
         // Skip attributes (those starting with @_)
         if (tagName.startsWith("@_")) continue;
 
+        // Use DeviceRegistry to create device instances
         const DeviceClass = DeviceRegistry.getDeviceClass(tagName);
         if (DeviceClass) {
           const deviceData = xmlObject.Devices[tagName];

@@ -141,23 +141,35 @@ export class Clip extends Nameable implements IClip {
       adapter: DoubleAdapter.fromXml,
     });
 
-    // handle content if present
+    // Iterate through all properties in xmlObject to find timeline elements
     for (const tagName in xmlObject) {
       // Skip attributes (those starting with @_)
       if (tagName.startsWith("@_")) continue;
 
-      const timelineInstance = TimelineRegistry.createTimelineFromXml(
-        tagName,
-        xmlObject[tagName]
-      );
-      if (timelineInstance) {
-        this.content = timelineInstance;
-        break; // We found and processed the content
-      } else {
-        console.warn(
-          `Skipping deserialization of unknown nested timeline content in Clip: ${tagName}`
+      const elementData = xmlObject[tagName];
+      const elementArray = Array.isArray(elementData)
+        ? elementData
+        : [elementData];
+
+      elementArray.forEach((item: any) => {
+        // Use TimelineRegistry to create timeline instances
+        const timelineInstance = TimelineRegistry.createTimelineFromXml(
+          tagName,
+          item
         );
-      }
+
+        if (timelineInstance instanceof Timeline) {
+          this.content = timelineInstance;
+        } else if (timelineInstance) {
+          console.warn(
+            `TimelineRegistry returned non-Timeline instance for tag ${tagName}`
+          );
+        } else {
+          console.warn(
+            `Skipping deserialization of unknown nested timeline content in Clip: ${tagName}`
+          );
+        }
+      });
     }
 
     Utility.populateAttribute<string>(xmlObject, "reference", this);

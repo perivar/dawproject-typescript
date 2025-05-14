@@ -90,25 +90,17 @@ export class Points extends Timeline implements IPoints {
 
     // Iterate through all properties in xmlObject to find point elements
     for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_), the Target element, and Points elements
-      if (
-        tagName.startsWith("@_") ||
-        tagName === "Target" ||
-        tagName === "Points"
-      )
-        continue;
+      // Skip attributes (those starting with @_) and the Target element
+      if (tagName.startsWith("@_") || tagName === "Target") continue;
 
-      const pointXmlObject = xmlObject[tagName];
-      const pointArray = Array.isArray(pointXmlObject)
-        ? pointXmlObject
-        : [pointXmlObject];
+      const elementData = xmlObject[tagName];
+      const elementArray = Array.isArray(elementData)
+        ? elementData
+        : [elementData];
 
-      pointArray.forEach((pointObj: any) => {
+      elementArray.forEach((item: any) => {
         // Use PointRegistry to create point instances
-        const pointInstance = PointRegistry.createPointFromXml(
-          tagName,
-          pointObj
-        );
+        const pointInstance = PointRegistry.createPointFromXml(tagName, item);
 
         if (pointInstance instanceof Point) {
           points.push(pointInstance);
