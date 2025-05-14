@@ -174,38 +174,26 @@ export class Channel extends Lane implements IChannel {
     const devices: IDevice[] = [];
     if (xmlObject.Devices) {
       // Iterate through all properties in xmlObject.Devices to find Device elements
-      for (const tagName in xmlObject.Devices) {
-        // Skip attributes (those starting with @_)
-        if (tagName.startsWith("@_")) continue;
-
-        // Use DeviceRegistry to create device instances
-        const DeviceClass = DeviceRegistry.getDeviceClass(tagName);
-        if (DeviceClass) {
-          const deviceData = xmlObject.Devices[tagName];
-          const deviceArray = Array.isArray(deviceData)
-            ? deviceData
-            : [deviceData];
-
-          for (const deviceObj of deviceArray) {
-            try {
-              // Create a new instance and call fromXmlObject on it
-              const deviceInstance = new DeviceClass().fromXmlObject(deviceObj);
-              devices.push(deviceInstance);
-            } catch (e) {
-              console.error(
-                `Error deserializing nested device element ${tagName} in Channel:`,
-                e
-              );
-            }
-          }
-        } else {
-          console.warn(
-            `Skipping deserialization of unknown nested device element in Channel: ${tagName}`
-          );
+      // Process child elements of type Device and its subclasses using the registry
+      this.devices = []; // Initialize the devices array
+      Utility.populateChildrenFromXml<IDevice>(
+        xmlObject.Devices,
+        "devices",
+        this,
+        {
+          createFromXml: (tagName: string, xmlData: any) =>
+            DeviceRegistry.createDeviceFromXml(tagName, xmlData),
+        },
+        {
+          onError: (error: unknown, tagName: string) => {
+            console.error(
+              `Error deserializing nested device element ${tagName} in Channel:`,
+              error
+            );
+          },
         }
-      }
+      );
     }
-    this.devices = devices;
 
     return this;
   }

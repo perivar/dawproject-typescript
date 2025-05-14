@@ -53,37 +53,23 @@ export class Lanes extends Timeline implements ILanes {
 
     // Process child elements of type Lanes and its subclasses using the registry
     this.lanes = []; // Initialize the lanes array
-
-    // Iterate through all properties in xmlObject to find timeline elements
-    for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_)
-      if (tagName.startsWith("@_")) continue;
-
-      const elementData = xmlObject[tagName];
-      const elementArray = Array.isArray(elementData)
-        ? elementData
-        : [elementData];
-
-      elementArray.forEach((item: any) => {
-        // Use TimelineRegistry to create timeline instances
-        const timelineInstance = TimelineRegistry.createTimelineFromXml(
-          tagName,
-          item
-        );
-
-        if (timelineInstance instanceof Timeline) {
-          this.lanes.push(timelineInstance);
-        } else if (timelineInstance) {
-          console.warn(
-            `TimelineRegistry returned non-Timeline instance for tag ${tagName}`
+    Utility.populateChildrenFromXml<Timeline>(
+      xmlObject,
+      "lanes",
+      this,
+      {
+        createFromXml: (tagName: string, xmlData: any) =>
+          TimelineRegistry.createTimelineFromXml(tagName, xmlData),
+      },
+      {
+        onError: (error: unknown, tagName: string) => {
+          console.error(
+            `Error deserializing nested timeline element ${tagName} in Lanes:`,
+            error
           );
-        } else {
-          console.warn(
-            `Skipping deserialization of unknown nested timeline element: ${tagName}`
-          );
-        }
-      });
-    }
+        },
+      }
+    );
 
     return this;
   }

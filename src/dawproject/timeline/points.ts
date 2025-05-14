@@ -3,6 +3,7 @@ import { registerTimeline } from "../registry/timelineRegistry";
 import type { IPoints, ITrack } from "../types";
 import { Unit } from "../unit";
 import { AutomationTarget } from "./automationTarget";
+import { Utility } from "../utility"; // Import Utility
 import { Point } from "./point";
 import { Timeline } from "./timeline";
 import { TimeUnit } from "./timeUnit";
@@ -86,36 +87,25 @@ export class Points extends Timeline implements IPoints {
     }
 
     // Process child elements of type Point and its subclasses using the registry
-    const points: Point[] = [];
-
-    // Iterate through all properties in xmlObject to find point elements
-    for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_) and the Target element
-      if (tagName.startsWith("@_") || tagName === "Target") continue;
-
-      const elementData = xmlObject[tagName];
-      const elementArray = Array.isArray(elementData)
-        ? elementData
-        : [elementData];
-
-      elementArray.forEach((item: any) => {
-        // Use PointRegistry to create point instances
-        const pointInstance = PointRegistry.createPointFromXml(tagName, item);
-
-        if (pointInstance instanceof Point) {
-          points.push(pointInstance);
-        } else if (pointInstance) {
-          console.warn(
-            `PointRegistry returned non-Point instance for tag ${tagName}`
+    this.points = []; // Initialize the points array
+    Utility.populateChildrenFromXml<Point>(
+      xmlObject,
+      "points",
+      this,
+      {
+        createFromXml: (tagName: string, xmlData: any) =>
+          PointRegistry.createPointFromXml(tagName, xmlData),
+      },
+      {
+        skipTags: ["Target"], // Skip the Target element
+        onError: (error: unknown, tagName: string) => {
+          console.error(
+            `Error deserializing nested point element ${tagName} in Points:`,
+            error
           );
-        } else {
-          console.warn(
-            `Skipping deserialization of unknown nested point element: ${tagName}`
-          );
-        }
-      });
-    }
-    this.points = points;
+        },
+      }
+    );
 
     if (xmlObject["@_unit"] !== undefined) {
       this.unit = xmlObject["@_unit"] as Unit; // Cast string to Unit

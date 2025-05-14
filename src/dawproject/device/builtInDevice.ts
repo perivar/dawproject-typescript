@@ -1,6 +1,12 @@
 import { BoolParameter } from "../boolParameter";
+import { Utility } from "../utility"; // Import Utility
 import { DeviceRegistry, registerDevice } from "../registry/deviceRegistry";
-import type { IBuiltInDevice, IFileReference, IParameter } from "../types";
+import type {
+  IBuiltInDevice,
+  IFileReference,
+  IParameter,
+  IDevice,
+} from "../types"; // Import IDevice
 import { Device } from "./device";
 import { DeviceRole } from "./deviceRole";
 
@@ -65,20 +71,24 @@ export class BuiltInDevice extends Device implements IBuiltInDevice {
   public fromXmlObject(xmlObject: any): this {
     super.fromXmlObject(xmlObject); // populate inherited attributes from Device
 
-    for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_)
-      if (tagName.startsWith("@_")) continue;
-
-      // Use DeviceRegistry to create device instances
-      const device = DeviceRegistry.createDeviceFromXml(
-        tagName,
-        xmlObject[tagName]
-      );
-      if (device) {
-        this.deviceType = device;
-        break; // We found and processed the device type
+    // Process child elements to find the device type using the registry
+    Utility.populateChildFromXml<IDevice>(
+      xmlObject,
+      "deviceType",
+      this,
+      {
+        createFromXml: (tagName: string, xmlData: any) =>
+          DeviceRegistry.createDeviceFromXml(tagName, xmlData),
+      },
+      {
+        onError: (error: unknown, tagName: string) => {
+          console.error(
+            `Error deserializing nested device element ${tagName} in BuiltInDevice:`,
+            error
+          );
+        },
       }
-    }
+    );
 
     return this;
   }

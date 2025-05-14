@@ -141,36 +141,24 @@ export class Clip extends Nameable implements IClip {
       adapter: DoubleAdapter.fromXml,
     });
 
-    // Iterate through all properties in xmlObject to find timeline elements
-    for (const tagName in xmlObject) {
-      // Skip attributes (those starting with @_)
-      if (tagName.startsWith("@_")) continue;
-
-      const elementData = xmlObject[tagName];
-      const elementArray = Array.isArray(elementData)
-        ? elementData
-        : [elementData];
-
-      elementArray.forEach((item: any) => {
-        // Use TimelineRegistry to create timeline instances
-        const timelineInstance = TimelineRegistry.createTimelineFromXml(
-          tagName,
-          item
-        );
-
-        if (timelineInstance instanceof Timeline) {
-          this.content = timelineInstance;
-        } else if (timelineInstance) {
-          console.warn(
-            `TimelineRegistry returned non-Timeline instance for tag ${tagName}`
+    // Process child elements to find the content using the registry
+    Utility.populateChildFromXml<Timeline>(
+      xmlObject,
+      "content",
+      this,
+      {
+        createFromXml: (tagName: string, xmlData: any) =>
+          TimelineRegistry.createTimelineFromXml(tagName, xmlData),
+      },
+      {
+        onError: (error: unknown, tagName: string) => {
+          console.error(
+            `Error deserializing nested timeline content ${tagName} in Clip:`,
+            error
           );
-        } else {
-          console.warn(
-            `Skipping deserialization of unknown nested timeline content in Clip: ${tagName}`
-          );
-        }
-      });
-    }
+        },
+      }
+    );
 
     Utility.populateAttribute<string>(xmlObject, "reference", this);
 

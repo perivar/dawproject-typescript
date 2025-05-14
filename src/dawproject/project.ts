@@ -96,37 +96,25 @@ export class Project extends XmlObject implements IProject {
     const structure: Lane[] = [];
     if (xmlObject.Structure) {
       // Use the LaneRegistry to determine the correct subclass of Lane
-      for (const tagName in xmlObject.Structure) {
-        // Skip attributes (those starting with @_)
-        if (tagName.startsWith("@_")) continue;
-
-        const laneData = xmlObject.Structure[tagName];
-        const laneArray = Array.isArray(laneData) ? laneData : [laneData];
-
-        laneArray.forEach((laneObj: any) => {
-          try {
-            // Use LaneRegistry to create lane instances
-            const laneInstance = LaneRegistry.createLaneFromXml(
-              tagName,
-              laneObj
-            );
-            if (laneInstance) {
-              structure.push(laneInstance);
-            } else {
-              console.warn(
-                `Skipping deserialization of unknown nested lane element in Structure: ${tagName}`
-              );
-            }
-          } catch (e) {
+      this.structure = []; // Initialize the structure array
+      Utility.populateChildrenFromXml<Lane>(
+        xmlObject.Structure,
+        "structure",
+        this,
+        {
+          createFromXml: (tagName: string, xmlData: any) =>
+            LaneRegistry.createLaneFromXml(tagName, xmlData),
+        },
+        {
+          onError: (error: unknown, tagName: string) => {
             console.error(
               `Error deserializing nested lane element in Structure: ${tagName}`,
-              e
+              error
             );
-          }
-        });
-      }
+          },
+        }
+      );
     }
-    this.structure = structure;
 
     if (xmlObject.Arrangement) {
       this.arrangement = new Arrangement().fromXmlObject(xmlObject.Arrangement);

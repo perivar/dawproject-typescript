@@ -333,4 +333,187 @@ export class Utility {
     const clipsTimeline = new Clips(clips);
     return clipsTimeline;
   }
+
+  /**
+   * Populates an array property of a target object by iterating through the
+   * child elements of an XML object and using a provided registry to create
+   * instances based on the XML tag names.
+   *
+   * @template T The expected type of the instances created by the registry.
+   * @param xmlObject The XML object (parsed from XML) containing the child elements.
+   * @param targetProperty The name of the property on the target object to populate.
+   * @param targetObject The object whose property should be populated.
+   * @param registry The registry to use for creating instances (e.g., TimelineRegistry, DeviceRegistry).
+   * @param options Configuration options.
+   * @param options.skipTags An optional array of tag names to skip during iteration (e.g., "@_", "Target").
+   * @param options.onInstanceCreated An optional callback function to process each created instance before adding it to the array.
+   *                                  If this function returns false, the instance is not added.
+   * @param options.onError An optional callback function to handle errors during instance creation.
+   *
+   * @example
+   * // Populate an array of Timeline instances
+   * Utility.populateChildrenFromXml<Timeline>(xmlObject, "lanes", this, {
+   *   createFromXml: (tagName: string, xmlData: any) =>
+   *     TimelineRegistry.createTimelineFromXml(tagName, xmlData),
+   *   onInstanceCreated: (instance: Timeline, tagName: string) => {
+   *     if (!(instance instanceof Timeline)) {
+   *       console.warn(
+   *         `TimelineRegistry returned non-Timeline instance for tag ${tagName}`
+   *       );
+   *       return false; // Do not add to lanes array
+   *     }
+   *     return true; // Add to lanes array
+   *   },
+   *   onError: (error: unknown, tagName: string) => {
+   *     console.error(
+   *       `Error deserializing nested timeline element ${tagName} in Lanes:`,
+   *       error
+   *     );
+   *   },
+   * });
+   */
+  static populateChildrenFromXml<T>(
+    xmlObject: any,
+    targetProperty: string,
+    targetObject: any,
+    registry: {
+      createFromXml: (tagName: string, xmlData: any) => T | undefined;
+    },
+    options?: {
+      skipTags?: string[];
+      onInstanceCreated?: (
+        instance: T,
+        tagName: string,
+        xmlData: any
+      ) => boolean | void;
+      onError?: (error: unknown, tagName: string, xmlData: any) => void;
+    }
+  ): void {
+    const skipTags = options?.skipTags || [];
+    const onInstanceCreated = options?.onInstanceCreated;
+    const onError =
+      options?.onError ||
+      ((error, tagName) =>
+        console.error(`Error deserializing nested element ${tagName}:`, error));
+
+    const targetArray = targetObject[targetProperty]; // Access target array from targetObject
+
+    if (!Array.isArray(targetArray)) {
+      console.error(`Target property '${targetProperty}' is not an array.`);
+      return;
+    }
+
+    for (const tagName in xmlObject) {
+      if (tagName.startsWith("@_") || skipTags.includes(tagName)) continue;
+
+      const elementData = xmlObject[tagName];
+      const elementArray = Array.isArray(elementData)
+        ? elementData
+        : [elementData];
+
+      elementArray.forEach((item: any) => {
+        try {
+          const instance = registry.createFromXml(tagName, item);
+
+          if (instance !== undefined) {
+            let shouldAdd = true;
+            if (onInstanceCreated) {
+              const result = onInstanceCreated(instance, tagName, item);
+              if (result === false) {
+                shouldAdd = false;
+              }
+            }
+
+            if (shouldAdd) {
+              targetArray.push(instance);
+            }
+          } else {
+            console.warn(
+              `Skipping children deserialization of unknown nested element: ${tagName}`
+            );
+          }
+        } catch (e) {
+          onError(e, tagName, item);
+        }
+      });
+    }
+  }
+
+  /**
+   * Populates a single property of a target object by iterating through the
+   * child elements of an XML object and using a provided registry to create
+   * a single instance based on the XML tag names. It expects only one matching
+   * child element.
+   *
+   * @template T The expected type of the instance created by the registry.
+   * @param xmlObject The XML object (parsed from XML) containing the child element.
+   * @param targetProperty The name of the property on the target object to populate.
+   * @param targetObject The object whose property should be populated.
+   * @param registry The registry to use for creating the instance (e.g., TimelineRegistry, DeviceRegistry).
+   * @param options Configuration options.
+   * @param options.skipTags An optional array of tag names to skip during iteration (e.g., "@_").
+   * @param options.onError An optional callback function to handle errors during instance creation.
+   * @returns The created instance, or undefined if no matching element was found or an error occurred.
+   *
+   * @example
+   * // Populate a single Timeline instance for clip content
+   * Utility.populateChildFromXml<Timeline>(xmlObject, "content", this, {
+   *   createFromXml: (tagName: string, xmlData: any) =>
+   *     TimelineRegistry.createTimelineFromXml(tagName, xmlData),
+   * }, {
+   *   onError: (error: unknown, tagName: string) => {
+   *     console.error(
+   *       `Error deserializing nested timeline content ${tagName} in Clip:`,
+   *       error
+   *     );
+   *   },
+   * });
+   */
+  static populateChildFromXml<T>(
+    xmlObject: any,
+    targetProperty: string,
+    targetObject: any,
+    registry: {
+      createFromXml: (tagName: string, xmlData: any) => T | undefined;
+    },
+    options?: {
+      skipTags?: string[];
+      onError?: (error: unknown, tagName: string, xmlData: any) => void;
+    }
+  ): T | undefined {
+    const skipTags = options?.skipTags || [];
+    const onError =
+      options?.onError ||
+      ((error, tagName) =>
+        console.error(`Error deserializing nested element ${tagName}:`, error));
+
+    let instance: T | undefined = undefined;
+
+    for (const tagName in xmlObject) {
+      if (tagName.startsWith("@_") || skipTags.includes(tagName)) continue;
+
+      const elementData = xmlObject[tagName];
+      // We expect a single element here, not an array
+      const item = Array.isArray(elementData) ? elementData[0] : elementData;
+
+      if (item) {
+        try {
+          instance = registry.createFromXml(tagName, item);
+          if (instance !== undefined) {
+            targetObject[targetProperty] = instance;
+            return instance; // Found and assigned, exit
+          } else {
+            console.warn(
+              `Skipping child deserialization of unknown nested element: ${tagName}`
+            );
+          }
+        } catch (e) {
+          onError(e, tagName, item);
+          return undefined; // Error occurred, exit
+        }
+      }
+    }
+
+    return undefined; // No matching element found
+  }
 }
